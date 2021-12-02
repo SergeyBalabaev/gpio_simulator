@@ -6,7 +6,7 @@
 #include "fileworker.h"
 
 namespace Cores {
-    static unsigned int ACTIVE = 0;
+    static volatile unsigned int ACTIVE = 0;
     static const std::string PATH = Globals::WORKDIR + "class/thermal/";
 
     void Ctrl_C_cores(int val);
