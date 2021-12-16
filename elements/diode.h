@@ -7,9 +7,10 @@ namespace Elements {
     public:
         Diode() = delete;
         Diode(int pin) : OutputElement("Diode", pin, 0) {
-            this->state_0 = "light off";
-            this->state_1 = "light on";
+            this->state_0 = "\u001b[0m"" ◆ ";
+            this->state_1 = "\u001b[32m"" ◆ ""\u001b[0m";
         };
+        void Paint();
     };
 }
 

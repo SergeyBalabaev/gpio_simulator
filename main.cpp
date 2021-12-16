@@ -17,6 +17,7 @@
 #include "hardware/core.h"
 //
 #include "elements/diode.h"
+#include "elements/button.h"
 //
 #include "fileworker.h"
 #include "globals.h"
@@ -36,14 +37,16 @@ int main()
 	{
 		// Insert assigment commands below
         Cores::Core c0, c1, c2, c3;
-        Elements::Diode d1(2);
-        Elements::Diode d2(3);
-        Elements::Diode d3(4);
-        Elements::Diode d4(5);
+        Elements::Diode d0(2), d1(3), d2(4), d3(5);
+        Elements::Button b0(6), b1(7), b2(8);
 		// Simulating actions below
-        for(;Globals::SIMULATING; sleep(1), system("clear")) {
-            cout << c0 << endl << c1 << endl << c2 << endl << c3 << endl;
-            cout << d1 << endl << d2 << endl << d3 << endl << d4 << endl;
+        for(;Globals::SIMULATING; usleep(250000u), system("clear")) {
+            cout << c0 << endl << c1 << endl << c2 << endl << c3 << endl << endl;
+            cout << d0 << endl << d1 << endl << d2 << endl << d3 << endl << endl;
+            cout << b0 << endl << b1 << endl << b2 << endl << endl;
+            for (Elements::Diode* d : {&d0, &d1, &d2, &d3})
+                d->Paint();
+            cout << endl;
 		};
 	}
 	catch(exception& re) {
