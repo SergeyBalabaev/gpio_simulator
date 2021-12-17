@@ -9,5 +9,6 @@ void Ctrl_C(int val) {
     std::cout << "\n_____SIGINT received_____\n";
     Globals::SIMULATING = Globals::FIFO_SIMULATING = 0;
     Filesystem(RMDIR, Globals::WORKDIR);
+    exit(0);
 }
 
