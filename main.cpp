@@ -40,7 +40,7 @@ int main()
         Elements::Diode d0(2), d1(3), d2(4), d3(5);
         Elements::Button b0(6), b1(7), b2(8);
 		// Simulating actions below
-        for(;Globals::SIMULATING; usleep(2500000u)) {
+        for(;Globals::SIMULATING; usleep(250000u), system("clear")) {
             cout << c0 << endl << c1 << endl << c2 << endl << c3 << endl << endl;
             cout << d0 << endl << d1 << endl << d2 << endl << d3 << endl << endl;
             cout << b0 << endl << b1 << endl << b2 << endl << endl;
